@@ -14,6 +14,7 @@ navigationFragment = "2.9.1"
 navigationUi = "2.9.1"
 activity = "1.10.1"
 volley = "1.2.1"
+kotlin = "2.0.21"
 
 [libraries]
 circleimageview = { module = "de.hdodenhof:circleimageview", version.ref = "circleimageview" }
@@ -33,4 +34,5 @@ volley = { group = "com.android.volley", name = "volley", version.ref = "volley"
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
+kotlin-android = { id = "org.jetbrains.kotlin.android", version.ref = "kotlin" }
 

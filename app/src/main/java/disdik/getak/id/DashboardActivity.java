@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -31,12 +32,14 @@ public class DashboardActivity extends AppCompatActivity {
     private ActivityDashboardBinding binding;
     private TextView namaLengkap, email;
     private SharedPreferences sharedPreferences;
+    private Button btnReport;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
         binding = ActivityDashboardBinding.inflate(getLayoutInflater());
+        btnReport = binding.getRoot().findViewById(R.id.btnTambah);
         setContentView(binding.getRoot());
 
         setSupportActionBar(binding.appBarDashboard.toolbar);
@@ -63,9 +66,9 @@ public class DashboardActivity extends AppCompatActivity {
 //                editor.clear();
 //                editor.apply();
 
-                startActivity(new Intent(this, LoginActivity.class));
+                startActivity(new Intent(this, AddReportsActivity.class));
                 drawer.closeDrawer(GravityCompat.START);
-                finish();
+//                finish();
                 return true;
             } else {
                 NavController navController1 = Navigation.findNavController(this, R.id.nav_host_fragment_content_dashboard);
@@ -76,6 +79,8 @@ public class DashboardActivity extends AppCompatActivity {
                 return handled;
             }
         });
+
+
 
         initialization();
         mainLogic();
