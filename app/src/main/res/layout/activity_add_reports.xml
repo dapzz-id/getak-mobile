@@ -6,121 +6,297 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#FFF0F0"
     tools:context=".AddReportsActivity">
 
-    <ScrollView
+    <!-- Header -->
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:elevation="4dp">
+
+        <com.google.android.material.appbar.MaterialToolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="#FFFFFF"
+            app:title="Buat Laporan Baru"
+            app:titleTextAppearance="@style/TextAppearance.MaterialComponents.Headline6"
+            app:titleTextColor="#FF5C75" />
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <androidx.core.widget.NestedScrollView
         android:id="@+id/scrollView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:padding="16dp"
-        android:background="#FFFFFF"
-        app:layout_constraintTop_toTopOf="parent"
+        android:clipToPadding="false"
+        app:layout_constraintTop_toBottomOf="@id/appBar"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent">
 
-        <LinearLayout
-            android:id="@+id/formLayout"
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:layout_margin="16dp"
+            app:cardElevation="4dp"
+            app:cardCornerRadius="12dp"
+            app:cardBackgroundColor="#FFFFFF">
 
-            <EditText
-                android:id="@+id/inputStatusPelapor"
-                style="@style/InputBoxStyle"
-                android:hint="Status Pelapor" />
-
-            <EditText
-                android:id="@+id/inputNamaKorban"
-                style="@style/InputBoxStyle"
-                android:hint="Nama Korban / Pekerjaan" />
-
-            <EditText
-                android:id="@+id/inputNamaSanksi"
-                style="@style/InputBoxStyle"
-                android:hint="Nama Sanksi / Pekerjaan" />
-
-            <EditText
-                android:id="@+id/inputNamaTerlapor"
-                style="@style/InputBoxStyle"
-                android:hint="Nama Terlapor / Pelaku / Pekerjaan" />
-
-            <EditText
-                android:id="@+id/inputKontak"
-                style="@style/InputBoxStyle"
-                android:hint="Kontak yang Dapat Dihubungi"
-                android:inputType="phone" />
-
-            <EditText
-                android:id="@+id/inputFrekuensi"
-                style="@style/InputBoxStyle"
-                android:hint="Frekuensi Kejadian" />
-
-            <EditText
-                android:id="@+id/inputJudul"
-                style="@style/InputBoxStyle"
-                android:hint="Judul Laporan" />
-
-            <EditText
-                android:id="@+id/inputBentuk"
-                style="@style/InputBoxStyle"
-                android:hint="Bentuk Kekerasan" />
-
-            <EditText
-                android:id="@+id/inputTanggalWaktu"
-                style="@style/InputBoxStyle"
-                android:hint="Tanggal dan Waktu Kejadian"
-                android:focusable="false"
-                android:clickable="true"
-                android:inputType="none" />
-
-            <EditText
-                android:id="@+id/inputTempat"
-                style="@style/InputBoxStyle"
-                android:hint="Tempat Kejadian" />
-
-            <EditText
-                android:id="@+id/inputKronologi"
-                style="@style/InputBoxStyle"
-                android:gravity="top"
-                android:hint="Kronologi Kejadian"
-                android:inputType="textMultiLine"
-                android:minLines="4" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Bukti Gambar"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:layout_marginTop="16dp" />
-
-            <ImageView
-                android:id="@+id/imagePriview"
-                android:layout_width="match_parent"
-                android:layout_height="200dp"
-                android:layout_marginTop="8dp"
-                android:scaleType="centerCrop"
-                android:background="#E0E0E0" />
-
-            <Button
-                android:id="@+id/btnPilihGambar"
+            <LinearLayout
+                android:id="@+id/formLayout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Upload Gambar"
-                android:backgroundTint="#FF5C75"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="8dp" />
+                android:orientation="vertical"
+                android:padding="16dp">
 
-            <Button
-                android:id="@+id/btnSubmit"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Kirim Laporan"
-                android:backgroundTint="#03A9F4"
-                android:textColor="#FFFFFF"
-                android:layout_marginTop="24dp" />
+                <!-- Status Pelapor -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Status Pelapor">
 
-        </LinearLayout>
-    </ScrollView>
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputStatusPelapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Nama Korban -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Nama Korban / Pekerjaan">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputNamaKorban"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Nama Sanksi -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Nama Sanksi / Pekerjaan">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputNamaSanksi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Nama Terlapor -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Nama Terlapor / Pelaku / Pekerjaan">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputNamaTerlapor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kontak -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Kontak yang Dapat Dihubungi">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputKontak"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:inputType="phone" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Frekuensi -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Frekuensi Kejadian">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputFrekuensi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Judul -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Judul Laporan">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputJudul"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Bentuk Kekerasan -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Bentuk Kekerasan">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputBentuk"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Tanggal Waktu -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Tanggal dan Waktu Kejadian">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputTanggalWaktu"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:focusable="false"
+                        android:clickable="true"
+                        android:inputType="none" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Tempat -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Tempat Kejadian">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputTempat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Kronologi -->
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                    app:boxStrokeColor="#FF5C75"
+                    app:hintTextColor="#FF5C75"
+                    android:hint="Kronologi Kejadian">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/inputKronologi"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="top"
+                        android:minLines="4"
+                        android:inputType="textMultiLine" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Bukti Gambar Section -->
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Bukti Gambar"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Subtitle1"
+                    android:textColor="#FF5C75" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="200dp"
+                    android:layout_marginBottom="16dp"
+                    app:cardElevation="2dp"
+                    app:cardCornerRadius="8dp">
+
+                    <ImageView
+                        android:id="@+id/imagePriview"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:scaleType="centerCrop"
+                        android:background="#E0E0E0" />
+
+                </androidx.cardview.widget.CardView>
+
+                <!-- Upload Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnPilihGambar"
+                    style="@style/Widget.MaterialComponents.Button.OutlinedButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="16dp"
+                    android:text="Upload Gambar"
+                    app:strokeColor="#FF5C75"
+                    app:strokeWidth="2dp"
+                    android:textColor="#FF5C75" />
+
+                <!-- Submit Button -->
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/btnSubmit"
+                    style="@style/Widget.MaterialComponents.Button"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="Kirim Laporan"
+                    android:backgroundTint="#FF5C75"
+                    android:textColor="#FFFFFF" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+    </androidx.core.widget.NestedScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
