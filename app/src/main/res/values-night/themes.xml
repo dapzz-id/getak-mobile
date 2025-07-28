@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.Getak" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/purple_200</item>
+        <item name="colorPrimaryVariant">@color/purple_700</item>
+        <item name="colorOnPrimary">@color/black</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_200</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
+        <!-- Customize your theme here. -->
+    </style>
+
+    <style name="Widget.EPresence.TextInputLayout" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/text_input_stroke</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.EPresence.MediumComponent</item>
+        <item name="hintTextColor">@color/text_input_hint</item>
+        <item name="android:textColorHint">@color/text_input_hint</item>
+    </style>
+
+    <style name="ShapeAppearance.EPresence.MediumComponent" parent="ShapeAppearance.Material3.MediumComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="CustomTextInputStyle" parent="Widget.Material3.TextInputLayout.OutlinedBox">
+        <item name="boxStrokeColor">@color/colorBoxStrokeFocused</item>
+        <item name="boxStrokeWidth">1dp</item>
+        <item name="shapeAppearance">@style/ShapeAppearance.EPresence.MediumComponent</item>
+        <item name="hintTextColor">@color/text_input_hint</item>
+        <item name="android:textColorHint">@color/text_input_hint</item>
+    </style>
+</resources>

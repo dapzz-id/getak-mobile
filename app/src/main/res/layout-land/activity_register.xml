@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context=".RegisterActivity">
+
+    <!-- Left Side - Register Form -->
+    <LinearLayout
+        android:id="@+id/left_container"
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="20dp"
+        android:paddingStart="60dp"
+        android:paddingEnd="60dp"
+        android:gravity="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintWidth_percent="1"
+        tools:ignore="RtlSymmetry">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="start"
+            android:maxWidth="320dp"
+            tools:ignore="UselessParent">
+
+            <TextView
+                android:id="@+id/tv_title"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Daftar Akun"
+                android:textSize="24sp"
+                android:textStyle="bold"
+                android:textColor="@android:color/black"
+                android:layout_marginBottom="4dp"
+                tools:ignore="HardcodedText" />
+
+            <TextView
+                android:id="@+id/tv_subtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="30dp"
+                android:lineSpacingExtra="1dp"
+                android:text="Silakan daftar akun untuk melakukan pelaporan"
+                android:textColor="#999999"
+                android:textSize="14sp"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:id="@+id/subLayout"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:baselineAligned="false"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:id="@+id/sub1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1"
+                    android:layout_marginEnd="12dp">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutNIK"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxBackgroundColor="#F5F5F5"
+                        app:boxCornerRadiusTopStart="6dp"
+                        app:boxCornerRadiusTopEnd="6dp"
+                        app:boxCornerRadiusBottomStart="6dp"
+                        app:boxCornerRadiusBottomEnd="6dp"
+                        app:boxStrokeWidth="1dp"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        app:boxStrokeErrorColor="#ff0000">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/nik"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="NISN/NIK"
+                            android:inputType="numberSigned"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="#455A64"
+                            android:padding="14dp"
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutNamaLengkap"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxBackgroundColor="#F5F5F5"
+                        app:boxCornerRadiusTopStart="6dp"
+                        app:boxCornerRadiusTopEnd="6dp"
+                        app:boxCornerRadiusBottomStart="6dp"
+                        app:boxCornerRadiusBottomEnd="6dp"
+                        app:boxStrokeWidth="1dp"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        app:boxStrokeErrorColor="#ff0000">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/namaLengkap"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nama Lengkap"
+                            android:inputType="textPersonName"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="#455A64"
+                            android:padding="14dp"
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sub2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutSekolah"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="7dp"
+                        app:boxBackgroundMode="outline"
+                        app:endIconMode="dropdown_menu"
+                        app:boxBackgroundColor="#F5F5F5"
+                        app:boxCornerRadiusTopStart="6dp"
+                        app:boxCornerRadiusTopEnd="6dp"
+                        app:boxCornerRadiusBottomStart="6dp"
+                        app:boxCornerRadiusBottomEnd="6dp"
+                        app:boxStrokeWidth="1dp"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        app:boxStrokeErrorColor="#ff0000"
+                        android:hint="Pilih Sekolah"
+                        tools:ignore="HardcodedText">
+
+                        <AutoCompleteTextView
+                            android:id="@+id/autoCompleteSekolah"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:backgroundTint="@android:color/transparent"
+                            android:dropDownAnchor="@id/layoutSekolah"
+                            android:inputType="text"
+                            android:padding="14dp"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="#455A64"
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText,LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutNoWhatsApp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxBackgroundColor="#F5F5F5"
+                        app:boxCornerRadiusTopStart="6dp"
+                        app:boxCornerRadiusTopEnd="6dp"
+                        app:boxCornerRadiusBottomStart="6dp"
+                        app:boxCornerRadiusBottomEnd="6dp"
+                        app:boxStrokeWidth="1dp"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        app:boxStrokeErrorColor="#ff0000"
+                        app:prefixText="+62"
+                        app:prefixTextColor="@color/black"
+                        app:prefixTextAppearance="@style/PrefixTextSmall">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/noWhatsApp"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Nomor WhatsApp"
+                            android:inputType="phone"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="#455A64"
+                            android:padding="14dp"
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+
+                <LinearLayout
+                    android:id="@+id/sub3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_weight="1">
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutEmail"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8.5dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxBackgroundColor="#F5F5F5"
+                        app:boxCornerRadiusTopStart="6dp"
+                        app:boxCornerRadiusTopEnd="6dp"
+                        app:boxCornerRadiusBottomStart="6dp"
+                        app:boxCornerRadiusBottomEnd="6dp"
+                        app:boxStrokeWidth="1dp"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        app:boxStrokeErrorColor="#ff0000">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/email"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Alamat Email"
+                            android:inputType="textEmailAddress"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="#455A64"
+                            android:padding="14dp"
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText,TouchTargetSizeCheck" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        android:id="@+id/layoutPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="10dp"
+                        app:boxBackgroundMode="outline"
+                        app:boxBackgroundColor="#F5F5F5"
+                        app:boxCornerRadiusTopStart="6dp"
+                        app:boxCornerRadiusTopEnd="6dp"
+                        app:boxCornerRadiusBottomStart="6dp"
+                        app:boxCornerRadiusBottomEnd="6dp"
+                        app:boxStrokeWidth="1dp"
+                        app:boxStrokeWidthFocused="1dp"
+                        app:passwordToggleEnabled="true"
+                        app:hintTextColor="@color/black"
+                        app:boxStrokeColor="@color/black"
+                        app:boxStrokeErrorColor="#ff0000">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/password"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:hint="Password"
+                            android:inputType="textPassword"
+                            android:singleLine="true"
+                            android:textColor="@color/black"
+                            android:textColorHint="#455A64"
+                            android:padding="14dp"
+                            android:textSize="12sp"
+                            tools:ignore="HardcodedText" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+                </LinearLayout>
+            </LinearLayout>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_register"
+                android:layout_width="match_parent"
+                android:layout_height="52dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="24dp"
+                android:background="@drawable/button_rounded_login"
+                android:elevation="12dp"
+                android:text="Daftar"
+                android:textAllCaps="false"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                app:backgroundTint="@color/bg_getak"
+                app:cornerRadius="12dp"
+                tools:ignore="HardcodedText" />
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_horizontal">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Sudah punya akun? "
+                    android:textSize="12sp"
+                    android:textColor="@color/text_gray"
+                    tools:ignore="HardcodedText,SmallSp" />
+
+                <TextView
+                    android:id="@+id/tv_login"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:clickable="true"
+                    android:focusable="true"
+                    android:padding="4dp"
+                    android:paddingStart="5dp"
+                    android:text="Masuk"
+                    android:textColor="#0d00ff"
+                    android:textSize="12sp"
+                    android:textStyle="bold"
+                    tools:ignore="HardcodedText,RtlSymmetry,TouchTargetSizeCheck" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

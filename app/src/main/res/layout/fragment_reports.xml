@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.reports.ReportFragment">
+
+    <LinearLayout
+        android:id="@+id/mainLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="16dp"
+        android:background="#F8F9FA">
+
+        <TextView
+            android:id="@+id/title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monitoring Laporan"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginBottom="12dp"
+            tools:ignore="HardcodedText" />
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_marginBottom="12dp"
+            android:background="@android:drawable/editbox_background"
+            android:hint="Cari"
+            android:importantForAutofill="no"
+            android:paddingHorizontal="12dp"
+            tools:ignore="HardcodedText,TextFields,TouchTargetSizeCheck" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingVertical="8dp"
+                android:background="#FFF0F0">
+
+                <!-- Header Texts -->
+                <TextView android:text="ID Laporan" style="@style/HeaderCell"
+                    tools:ignore="HardcodedText" />
+                <TextView android:text="Judul" style="@style/HeaderCell"
+                    tools:ignore="HardcodedText" />
+                <TextView android:text="Bentuk Kekerasan" style="@style/HeaderCell"
+                    tools:ignore="HardcodedText" />
+                <TextView android:text="Nama Korban" style="@style/HeaderCell"
+                    tools:ignore="HardcodedText" />
+                <TextView android:text="Nama Terlapor" style="@style/HeaderCell"
+                    tools:ignore="HardcodedText" />
+                <TextView android:text="TPPKSP" style="@style/HeaderCell"
+                    tools:ignore="HardcodedText" />
+                <TextView android:text="Rekomendasi" style="@style/HeaderCell"
+                    tools:ignore="HardcodedText" />
+
+            </LinearLayout>
+        </HorizontalScrollView>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerLaporan"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:background="#FFFFFF"
+            android:padding="4dp" />
+
+        <Button
+            android:id="@+id/btnTambah"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Tambah Data"
+            android:backgroundTint="#FF5C75"
+            android:textColor="#FFFFFF"
+            android:layout_marginTop="8dp"
+            tools:ignore="HardcodedText" />
+    </LinearLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
