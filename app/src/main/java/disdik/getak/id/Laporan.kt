@@ -1,6 +1,8 @@
 package disdik.getak.id
 
 data class Laporan(
+    val user_id: String,
+    val refrence_number: String,
     val status_pelapor: String,
     val nama_korban: String,
     val nama_sanksi: String,
@@ -13,4 +15,3 @@ data class Laporan(
     val frekuensi: String,
     val kronologi: String
 )
-

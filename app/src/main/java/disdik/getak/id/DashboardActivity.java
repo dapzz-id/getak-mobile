@@ -61,14 +61,14 @@ public class DashboardActivity extends AppCompatActivity {
             int id = item.getItemId();
 
             if (id == R.id.nav_logout) {
-//                SharedPreferences loginPrefs = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
-//                SharedPreferences.Editor editor = loginPrefs.edit();
-//                editor.clear();
-//                editor.apply();
+                SharedPreferences loginPrefs = getSharedPreferences("LoginPrefs", Context.MODE_PRIVATE);
+                SharedPreferences.Editor editor = loginPrefs.edit();
+                editor.clear();
+                editor.apply();
 
-                startActivity(new Intent(this, AddReportsActivity.class));
+                startActivity(new Intent(this, LoginActivity.class));
                 drawer.closeDrawer(GravityCompat.START);
-//                finish();
+                finish();
                 return true;
             } else {
                 NavController navController1 = Navigation.findNavController(this, R.id.nav_host_fragment_content_dashboard);
